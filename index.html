@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saepul Bahri Site</title>
+    <link rel="shortcut icon" href="assets/img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+      @font-face {
+          font-family: 'berlin';
+          src: url(../fonts/BRLNSDB.TTF);
+      }
+
+      @font-face {
+            font-family: 'Goldman';
+          src: url(../fonts/Goldman-Bold.ttf);
+      }
+
+      @keyframes spin {
+          0% {
+              transform: rotate(0deg);
+          }
+
+          100% {
+              transform: rotate(180deg);
+          }
+      }
+
+      * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+      }
+
+      a {
+          text-decoration: none;
+      }
+
+      html {
+          scroll-behavior: smooth;
+      }
+
+      body {
+          background-color: #1d1e20;
+          font-family: 'berlin', Arial;
+      }
+
+      ::-webkit-scrollbar {
+          width: 4px;
+      }
+
+      ::-webkit-scrollbar-track {
+          background: #1d1e20;
+      }
+
+      ::-webkit-scrollbar-thumb {
+          background: #feba00;
+      }
+
+      aside {
+          position: fixed;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 50%;
+          background-color: black;
+          display: flex;
+      }
+
+      aside nav {
+          flex-basis: 10%;
+          background-color: #1d1e20;
+      }
+
+      aside .image-fix {
+          flex-basis: 90%;
+          background-image: url(../img/orasi.png);
+          background-size: cover;
+          position: relative;
+      }
+
+      aside .image-fix-content {
+          position: absolute;
+          bottom: 5%;
+          left: 23%;
+          text-align: center;
+      }
+
+      .image-fix-content h2 {
+          font-size: 60px;
+          color: white;
+      }
+
+      .image-fix span {
+          color: #feba00;
+      }
+
+      nav {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+      }
+
+      nav .bar {
+          flex-basis: 10%;
+          background-color: #feba00;
+          padding: 0px 20px;
+          cursor: pointer;
+      }
+
+      nav ul {
+          flex-basis: 80%;
+          list-style: none;
+          text-align: center;
+          justify-content: center;
+          padding-top: 10px;
+      }
+
+      nav .downloadcv {
+          flex-basis: 10%;
+          cursor: pointer;
+      }
+
+      nav .bar p {
+          font-size: 40px;
+          color: #1d1e20;
+          font-family: 'Goldman', cursive;
+          flex-basis: 10%;
+          line-height: 80px;
+          cursor: pointer;
+      }
+
+      nav .bar p:hover {
+          animation: spin 0.5s ease-in;
+      }
+
+      nav ul i {
+          font-size: 30px;
+          color: #feba00;
+          margin-top: 15px;
+          padding: 10px;
+          transition: 0.2s;
+      }
+
+      nav ul i:hover {
+          transform: translateY(-7px);
+          text-shadow: 0px 5px 2px rgba(255, 255, 255, 0.3);
+      }
+
+      nav .downloadcv i {
+          font-size: 50px;
+          color: #feba00;
+          flex-basis: 10%;
+          background-color: #1d1e20;
+          padding: 10px;
+          z-index: 10;
+          position: ABSOLUTE;
+          bottom: 30px;
+          transition: 0.2s;
+      }
+
+      nav .downloadcv i:hover {
+          transform: translateX(15px);
+      }
+
+      main {
+          position: absolute;
+          top: 3%;
+          right: 2%;
+          left: 52%;
+          color: white;
+          text-align: justify;
+          padding-bottom: 10px;
+      }
+
+      #about h1,
+      #skills h1,
+      #contact h1,
+      #projects h1 {
+          font-size: 65px;
+          margin-left: 20px;
+      }
+
+      #about ul {
+          list-style: none;
+          margin-left: 20px;
+      }
+
+      #about li {
+          display: inline-block;
+          margin: 10px 20px 20px 0px;
+          color: #feba00;
+      }
+
+      #about p.text {
+          width: 70%;
+          margin-left: 20px;
+      }
+
+      #about h3 {
+          font-size: 30px;
+          margin-left: 20px;
+      }
+
+      #about section,
+      .look {
+          display: flex;
+      }
+
+      #about div {
+          flex-basis: 50%;
+          margin: 20px;
+      }
+
+      #about section i,
+      .look i {
+          color: #feba00;
+          font-size: 25px;
+          margin: 7px 0px 5px;
+      }
+
+      #about section h5,
+      .look h5 {
+          color: #feba00;
+          font-size: 16px;
+          margin: 0px 0px 7px;
+      }
+
+      #about section p,
+      .look p {
+          font-size: 14px;
+      }
+
+      .hr {
+          width: 100%;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          background-color: #3f4042;
+          border: 0;
+          height: 3px;
+      }
+
+      #skills {
+          margin-top: 20px;
+          padding-top: 10px;
+      }
+
+      #skills section {
+          margin: 0 20px 0;
+      }
+
+      #skills .skill {
+          margin-top: 11px;
+      }
+
+      #skills .skill div {
+          display: flex;
+          justify-content: space-between;
+      }
+
+      #skills .progress {
+          width: 100%;
+          height: 5px;
+          border-radius: 5px;
+          background-color: #3f4042;
+          margin-top: 5px;
+          position: relative;
+      }
+
+      #skills .progress .progress-content {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          background-color: #feba00;
+          border-radius: 5px;
+      }
+
+      #skills .html {
+          right: 20%;
+      }
+
+      #skills .css {
+          right: 12%;
+      }
+
+      #skills .js {
+          right: 35%;
+      }
+
+      #skills .php {
+          right: 28%;
+      }
+
+      #skills .mysql {
+          right: 30%;
+      }
+
+      #skills .java {
+          right: 75%;
+      }
+
+      #skills .jquery {
+          right: 20%;
+      }
+
+      #skills .bootstrap {
+          right: 10%;
+      }
+
+      #skills .look {
+          margin-top: 20px;
+      }
+
+      #skills h3 {
+          font-size: 30px;
+          margin-top: 30px;
+          margin-bottom: 10px;
+      }
+
+      #skills .look div {
+          flex-basis: 50%;
+          margin: 10px 5px 0px;
+          text-align: center;
+      }
+
+      #skills .look div .left {
+          text-align: left;
+      }
+
+      #skills .look div .right {
+          text-align: right;
+      }
+
+      #skills .look div div p:last-child {
+          color: #feba00;
+      }
+
+      #skills .item p {
+          font-size: 12px;
+          text-align: center;
+          padding: 5px;
+      }
+
+      #projects {
+          margin-top: 30px;
+      }
+
+      #projects section {
+          display: flex;
+          justify-content: space-around;
+          margin: 20px;
+      }
+
+      #projects section div {
+          display: flex;
+          flex-direction: column;
+      }
+
+      #projects section img {
+          width: 100%;
+          padding: 10px;
+          cursor: pointer;
+      }
+
+      .box {
+          position: relative;
+          margin: 3px;
+      }
+
+      .text-box {
+          background-color: rgba(255, 255, 255, 0.7);
+          color: #1d1e20;
+          position: absolute;
+          bottom: 0px;
+          width: 100%;
+          padding: 15px;
+          text-align: center;
+          transition: 0.4s;
+          display: none;
+      }
+
+      .text-box:hover {
+          display: inline-block;
+      }
+
+      .text-box p {
+          font-size: 14px;
+      }
+
+      .text-box span {
+          font-size: 12px;
+      }
+
+      #contact section {
+          margin: 0 20px;
+      }
+
+      #contact iframe {
+          width: 100%;
+          margin-top: 15px;
+          height: 270px;
+      }
+
+      #contact .contact {
+          display: flex;
+      }
+
+      #contact .contact .hub {
+          width: 100%;
+      }
+
+      #contact .contact .hub div {
+          display: flex;
+          margin: 5px;
+          align-items: center;
+      }
+
+      #contact .contact .hub div i {
+          font-size: 25px;
+          margin: 5px;
+          color: #feba00;
+      }
+
+      #contact .contact .hub div p {
+          margin: 2px;
+      }
+
+      footer {
+          margin-top: 20px;
+          background-color: rgba(255, 255, 255, 0.1);
+          color: #feba00;
+          text-align: center;
+          padding: 5px;
+      }
+    </style>
+</head>
+
+<body>
+    <aside>
+        <nav>
+            <div class="bar">
+                <a href="#">
+                    <p>S</p>
+                </a>
+            </div>
+            <ul>
+                <a href="#about">
+                    <li><i class="fas fa-user-tie"></i></li>
+                </a>
+                <a href="#skills">
+                    <li><i class="fas fa-glasses"></i></li>
+                </a>
+                <a href="#projects">
+                    <li><i class="fas fa-briefcase"></i></li>
+                </a>
+                <a href="#contact">
+                    <li><i class="fas fa-phone"></i></li>
+                </a>
+            </ul>
+            <div class="downloadcv">
+                <a href="assets/docs/Saepul-Bahri-CV.pdf"><i class="fas fa-cloud-download-alt"></i></a>
+            </div>
+        </nav>
+        <div class="image-fix">
+            <div class="image-fix-content">
+                <h2>Saepul Bahri</h2>
+                <span style="text-shadow: 2px 3px 4px rgba(0,0,0,0.6)">Programmer</span>
+            </div>
+        </div>
+    </aside>
+    <main>
+        <article id="about">
+            <h1>about me</h1>
+            <ul>
+                <li>17 Tahun</li>
+                <li>Bogor</li>
+                <li>Student</li>
+            </ul>
+            <p class="text">
+                <!-- Nama lengkap Saepul Bahri biasa dipanggil Saepul. Tinggal di Jawa Barat tepatnya di Bogor. Anak terakhir dari enam bersaudara. Bergerak dibidang programming. Mengenal programming sejak kelas 10 SMK. -->
+                Saepul Bahri's full name is usually called Saepul. Living in West Java to be precise in Bogor. The last child of six children. Engaged in programming. Get to know programming since the 10th grade of SMK.
+
+            </p>
+            <hr class="hr">
+            <h3>my services</h3>
+            <section>
+                <div>
+                    <i class="fas fa-code"></i>
+                    <h5>Web Development</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nam repellendus numquam. Fuga maiores expedita facilis velit animi eos neque harum omnis eum fugit. Pariatur omnis necessitatibus fugiat modi libero.</p>
+                </div>
+                <div>
+                    <i class="fab fa-android"></i>
+                    <h5>Android Development</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis cum nostrum dolore asperiores tenetur. Debitis veniam aliquid odit aspernatur adipisci aperiam soluta, dolores iusto quos accusamus optio at, itaque odio?</p>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <i class="fas fa-database"></i>
+                    <h5>Database</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, soluta iusto iste numquam pariatur quaerat optio rem maiores qui, libero obcaecati, dolorum voluptatum odio reprehenderit? Praesentium optio porro quia eaque!</p>
+                </div>
+                <div>
+                    <i class="fas fa-keyboard"></i>
+                    <h5>Copywriting</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, soluta iusto iste numquam pariatur quaerat optio rem maiores qui, libero obcaecati, dolorum voluptatum odio reprehenderit? Praesentium optio porro quia eaque!</p>
+                </div>
+            </section>
+        </article>
+
+        <article id="skills">
+            <h1>skills</h1>
+            <section>
+                <div class="skill">
+                    <div>
+                        <span>HTML</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-content html"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div>
+                        <span>CSS</span>
+                        <span>88%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-content css"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div>
+                        <span>Javascript</span>
+                        <span>65%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-content js"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div>
+                        <span>PHP</span>
+                        <span>72%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-content php"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div>
+                        <span>MySQL</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-content mysql"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div>
+                        <span>Bootstrap</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-content bootstrap"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div>
+                        <span>JQuery</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-content jquery"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div>
+                        <span>Codeigniter 4</span>
+                        <span>72%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-content php"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div>
+                        <span>Java</span>
+                        <span>35%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-content java"></div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="look">
+                    <div>
+                        <i class="fas fa-graduation-cap"></i>
+                        <h5>Education</h5>
+                        <div class="right">
+                            <p>DARUSSA'ADAH Vocational High School</p>
+                            <p>2018 - Now</p>
+                        </div>
+                        <div class="right">
+                            <p>CINTA NUSA Junior High School</p>
+                            <p>2015 - 2018</p>
+                        </div>
+                        <div class="right">
+                            <p>SENTUL 05 Elementary School</p>
+                            <p>2008 - 2015</p>
+                        </div>
+                    </div>
+                    <div>
+                        <i class="fas fa-briefcase"></i>
+                        <h5>Experience</h5>
+                        <div class="left">
+                            <p>INTERNSHIP at PT. Max Samsta Grup</p>
+                            <p>January 2020 - March 2020</p>
+                        </div>
+                        <div class="left">
+                            <p>FINALIS WEB DESIGN COMPETITION at Universitas Kanjuruhan Malang</p>
+                            <p>December 2019</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3>ceritificate</h3>
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <img src="assets/img/certificate/dicoding.jpg">
+                        <p>Dicoding - Basic Web Couse</p>
+                    </div>
+                    <div class="item">
+                        <img src="assets/img/certificate/html.jpg">
+                        <p>Sololearn - HTML Couse</p>
+                    </div>
+                    <div class="item">
+                        <img src="assets/img/certificate/css.jpg">
+                        <p>Sololearn CSS Course</p>
+                    </div>
+                    <div class="item">
+                        <img src="assets/img/certificate/unipro.jpg">
+                        <p>WDC Unipro Stage IV</p>
+                    </div>
+                    <div class="item">
+                        <img src="assets/img/certificate/js.jpg">
+                        <p>Sololearn JavaScript Course</p>
+                    </div>
+                    <div class="item">
+                        <img src="assets/img/certificate/jquery.jpg">
+                        <p>Sololearn JQuery Course</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <article id="projects">
+            <h1>projects done</h1>
+            <section>
+                <div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="assets/img/projects/siperpus.png">
+                        </div>
+                        <div class="text-box">
+                            <h5>SIPERPUS</h5>
+                            <p>Library System Website</p>
+                            <span>created using codeigniter 4 and admin lte</span>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="assets/img/projects/cfa.png">
+                        </div>
+                        <div class="text-box">
+                            <h5>CARE FOR AIDS</h5>
+                            <p>Donate-Themed Web Design</p>
+                            <span>created using html and bootstrap</span>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="assets/img/projects/ta.png">
+                        </div>
+                        <div class="text-box">
+                            <h5>SIPERBA</h5>
+                            <p>Lending System Website</p>
+                            <span>created using php and bootstrap</span>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="assets/img/projects/goi.png">
+                        </div>
+                        <div class="text-box">
+                            <h5>GALLERY OF INDONESIA</h5>
+                            <p>Hero-Themed Web Design</p>
+                            <span>created using html and bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="assets/img/projects/tidio.png">
+                        </div>
+                        <div class="text-box">
+                            <h5>TIDIO PROJECT</h5>
+                            <p>Company Profile Website</p>
+                            <span>created using codeigniter html and css native</span>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="assets/img/projects/wiracash.png">
+                        </div>
+                        <div class="text-box">
+                            <h5>WIRACASH</h5>
+                            <p>Financial System Website</p>
+                            <span>created using codeignite 4 and adminlte</span>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="assets/img/projects/kopiku.png">
+                        </div>
+                        <div class="text-box">
+                            <h5>KOPIKU</h5>
+                            <p>Sales Website</p>
+                            <span>created using wordpress with template xtra</span>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="assets/img/projects/evoting.png">
+                        </div>
+                        <div class="text-box">
+                            <h5>DARUSSA'ADAH VOTE</h5>
+                            <p>E-Voting Website</p>
+                            <span>created using codeigniter 4 and material admin</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <article id="contact">
+            <h1>contact</h1>
+            <section>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.961862315314!2d106.84519271431314!3d-6.526500965618313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c16b1aaa6abf%3A0x97a37d1ae498d138!2sJl.%20Alternatif%20Sentul%2C%20Sentul%2C%20Kec.%20Babakan%20Madang%2C%20Bogor%2C%20Jawa%20Barat!5e0!3m2!1sen!2sid!4v1606281038069!5m2!1sen!2sid"></iframe>
+            </section>
+            <section class="contact">
+                <div class="hub">
+                    <div>
+                        <i class="fab fa-whatsapp"></i>
+                        <p>081386470620</p>
+                    </div>
+                    <div>
+                        <i class="far fa-envelope"></i>
+                        <p>saefulbahrie407@gmail.com</p>
+                    </div>
+                </div>
+                <div class="hub">
+                    <div>
+                        <i class="fab fa-facebook-f"></i>
+                        <p>Ox-Saepull Bahriee</p>
+                    </div>
+                    <div>
+                        <i class="fab fa-instagram"></i>
+                        <p>ppulbhri</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <footer>
+            <p>Saepul bahri &copy; 2020 | All Rights Reserved</p>
+        </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            stagePadding: 0,
+            loop: true,
+            margin: 10,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
