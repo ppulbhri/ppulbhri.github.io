@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'berlin';
-    src: url(../fonts/BRLNSDB.TTF);
+    src: url(BRLNSDB.TTF);
 }
 
 @font-face {
     font-family: 'Goldman';
-    src: url(../fonts/Goldman-Bold.ttf);
+    src: url(Goldman-Bold.ttf);
 }
 
 @keyframes spin {
@@ -66,7 +66,7 @@ aside nav {
 
 aside .image-fix {
     flex-basis: 90%;
-    background-image: url(../img/orasi.png);
+    background-image: url(orasi.png);
     background-size: cover;
     position: relative;
 }
@@ -520,7 +520,7 @@ footer {
         width: 100%;
         height: 200px;
         background-color: blue;
-        background: url(../img/IMG_20201026_115313.jpg);
+        background: url(IMG_20201026_115313.jpg);
         background-size: cover;
         margin-bottom: 10px;
     }
