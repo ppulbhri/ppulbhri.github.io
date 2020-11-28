@@ -67,6 +67,7 @@ aside nav {
 aside .image-fix {
     flex-basis: 90%;
     background-image: url(IMG_20201026_115313.jpg);
+    background-position: -240px;
     background-size: cover;
     position: relative;
 }
